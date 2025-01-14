@@ -18,7 +18,18 @@ function generatePassword ( includeLowercase ,includeNumbers
     if(length <= 0 ){
         return 'Password length should be greater than 0'
     }
-return ; 
+    if (allChars.length === 0 ){
+            return 'Please select atleast one character type'
+     }
+
+        for(let i = 0 ; i < length; i++){
+            let random = Math.floor(Math.random() * allChars.length)
+            password += allChars[random]
+
+        }
+    
+return  password
+; 
 }
 
 
